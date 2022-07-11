@@ -42,7 +42,7 @@ from requirements.txt file, and then use that virtual env to do your testing.
 This isnt foolproof. You can still have host os-related issues, so beware. 
 '''
 
-model_name = "simple_ann"
+model_name= ann.MODEL_NAME
 
 
 def create_ml_vol():    

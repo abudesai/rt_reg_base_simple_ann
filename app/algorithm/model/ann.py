@@ -35,7 +35,6 @@ class InfCostStopCallback(Callback):
 class SimpleANN(): 
     
     def __init__(self, D, l1_reg=1e-3, l2_reg=1e-3, lr = 1e-2, activation = 'relu', **kwargs) -> None:
-        super(SimpleANN, self).__init__(**kwargs)
         self.D = D #number of neurons
         self.l1_reg = np.float(l1_reg)
         self.l2_reg = np.float(l2_reg)

@@ -1,0 +1,7 @@
+model,dataset_name,run_hpt,num_hpt_trials,rmse,r2,elapsed_time_in_minutes
+simple_ann,abalone,True,10,2.1262,0.3689,5.57
+simple_ann,auto_prices,True,10,4068.8932,0.7517,0.97
+simple_ann,computer_activity,True,10,5.0008,0.8829,7.09
+simple_ann,heart_disease,True,10,0.8465,0.4541,1.43
+simple_ann,white_wine,True,10,0.8172,0.2233,3.29
+simple_ann,ailerons,True,10,0.0002,0.819,6.01
