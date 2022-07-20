@@ -1,7 +1,7 @@
 import os, shutil
 import time
 import sys
-import pandas as pd, numpy as np
+import pandas as pd, numpy as np 
 import pprint
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
@@ -11,7 +11,7 @@ import algorithm.model_trainer as model_trainer
 import algorithm.model_server as model_server
 import algorithm.model_tuner as model_tuner
 import algorithm.preprocessing.pipeline as pipeline
-import algorithm.model.ann as ann
+import algorithm.model.regressor as regressor
 
 
 inputs_path = "./ml_vol/inputs/"
@@ -42,7 +42,7 @@ from requirements.txt file, and then use that virtual env to do your testing.
 This isnt foolproof. You can still have host os-related issues, so beware. 
 '''
 
-model_name= ann.MODEL_NAME
+model_name= regressor.MODEL_NAME
 
 
 def create_ml_vol():    
@@ -114,9 +114,9 @@ def train_and_save_algo():
     # Save the processing pipeline   
     pipeline.save_preprocessor(preprocessor, model_artifacts_path)
     # Save the model 
-    ann.save_model(model, model_artifacts_path)
+    regressor.save_model(model, model_artifacts_path)
     # Save training history
-    ann.save_training_history(history, model_artifacts_path)    
+    regressor.save_training_history(history, model_artifacts_path)    
     print("done with training")
 
 
@@ -208,10 +208,10 @@ if __name__ == "__main__":
 
     num_hpt_trials = 10
     run_hpt_list = [False, True]
-    # run_hpt_list = [False]
+    run_hpt_list = [False]
     
     datasets = ["abalone", "auto_prices", "computer_activity", "heart_disease", "white_wine", "ailerons"]
-    # datasets = ["heart_disease"]
+    datasets = ["heart_disease"]
     
     for run_hpt in run_hpt_list:
         all_results = []
